@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test</h1>
+    <form id="quizForm">
+        <label for="question1">Question1: This … my brother Mike.</label><br>
+        <input type="radio" name="question1" value="a"> am<br>
+        <input type="radio" name="question1" value="b"> has<br>
+        <input type="radio" name="question1" value="c"> is<br>
+
+        <label for="question2">Question2: My father’s sister is my …?</label><br>
+        <input type="radio" name="question2" value="a"> aunt<br>
+        <input type="radio" name="question2" value="b"> uncle<br>
+        <input type="radio" name="question2" value="c"> mother<br>
+
+        <label for="question3">Question3: Marry gave me … apple yesterday.?</label><br>
+        <input type="radio" name="question3" value="a"> a<br>
+        <input type="radio" name="question3" value="b"> an<br>
+        <input type="radio" name="question3" value="c"> - <br>
+
+        <label for="question4">Question4: I have got four blue … .?</label><br>
+        <input type="radio" name="question4" value="a"> box<br>
+        <input type="radio" name="question4" value="b"> boxs<br>
+        <input type="radio" name="question4" value="c"> boxes<br>
+
+        <label for="question5">Question5: My … car is red.</label><br>
+        <input type="radio" name="question5" value="a"> father’s<br>
+        <input type="radio" name="question5" value="b"> fathers’<br>
+        <input type="radio" name="question5" value="c"> father<br>
+
+        <!-- Дополнительные вопросы -->
+        <label for="question6">Question6: What is the opposite of "happy"?</label><br>
+        <input type="radio" name="question6" value="a"> Sad<br>
+        <input type="radio" name="question6" value="b"> Angry<br>
+        <input type="radio" name="question6" value="c"> Excited<br>
+
+        <label for="question7">Question7: Which one is a preposition: in, run, or cat?</label><br>
+        <input type="radio" name="question7" value="a"> In<br>
+        <input type="radio" name="question7" value="b"> Run<br>
+        <input type="radio" name="question7" value="c"> Cat<br>
+
+        <label for="question8">Question8: How many letters are there in the English alphabet?</label><br>
+        <input type="radio" name="question8" value="a"> 26<br>
+        <input type="radio" name="question8" value="b"> 24<br>
+        <input type="radio" name="question8" value="c"> 30<br>
+
+        <label for="question9">Question9: What is the past tense of "go"?</label><br>
+        <input type="radio" name="question9" value="a"> Went<br>
+        <input type="radio" name="question9" value="b"> Goed<br>
+        <input type="radio" name="question9" value="c"> Gone<br>
+
+        <label for="question10">Question10: Which one is a synonym for "happy"?</label><br>
+        <input type="radio" name="question10" value="a"> Sad<br>
+        <input type="radio" name="question10" value="b"> Joyful<br>
+        <input type="radio" name="question10" value="c"> Angry<br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var score = 0;
+            var answers = {
+                'question1': 'c',
+                'question2': 'a',
+                'question3': 'b',
+                'question4': 'c',
+                'question5': 'a',
+                'question6': 'a',
+                'question7': 'a',
+                'question8': 'a',
+                'question9': 'a',
+                'question10': 'b',
+            };
+            for(var i = 1; i <= 10; i++) {
+                var question = 'question' + i;
+                var userAnswer = document.querySelector('input[name="' + question + '"]:checked');
+                if(userAnswer && userAnswer.value === answers[question]) {
+                    score++;
+                }
+            }
+            alert('Your score: ' + score + ' of 10');
+        });
+    </script>
+</body>
+</html>

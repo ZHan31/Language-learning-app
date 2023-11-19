@@ -1,0 +1,11 @@
+body {
+    margin: 0; /* Убираем отступы у body */
+    padding: 0; /* Убираем отступы у body */
+    background-image: url('static/englang.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Растягиваем изображение на всю ширину и высоту экрана */
+    background-position: center; /* Располагаем изображение по центру */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    height: 100vh; /* Задаем высоту body равной высоте экрана (100% видимой высоты) */
+    display: flex;
+    flex-direction: column;
+}
